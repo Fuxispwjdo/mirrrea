@@ -2,7 +2,7 @@
 import  os
 def expand(s:str):
     for k in os.environ:
-        s = s.replace("$"= k, os.environ[k])
+        s = s.replace(f'${k}', os.environ[k])
         return s
 
 while True:
