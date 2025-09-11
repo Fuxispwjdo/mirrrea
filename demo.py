@@ -1,7 +1,13 @@
+# Вариант 40
+import  os
+def expand(s:str):
+    for k in os.environ:
+        s = s.replace("$"= k, os.environ[k])
+        return s
+
 while True:
-    raw = input("vfs> ")
+    raw = expand(input("vfs> "))
     cmd, *args= raw.split()
-    print(cmd)
     if cmd == "exit":
         break
 
